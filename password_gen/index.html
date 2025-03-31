@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="password-generator">
+            <div class="header">
+                <h1><span class="strong">Generator</span> de parole</h1>
+                <p>Creează o parolă puternică și sigură</p>
+            </div>
+
+            <div class="password-display">
+                <input type="text" id="password" readonly value="Parola ta aici">
+                <div class="password-display__btns">
+                    <button type="button" id="copy-btn" title="Copiază parola">
+                        <i class="fa-regular fa-copy"></i>
+                    </button>
+                    <button type="button" id="refresh-btn" title="Generează o nouă parolă">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="options">
+                    <label>
+                        <input type="checkbox" id="lowercase" checked>
+                        <span class="checkbox"></span>
+                        <span class="option-text">Litere mici (abc)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="uppercase" checked>
+                        <span class="checkbox"></span>
+                        <span class="option-text">Litere mari (ABC)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="numbers" checked>
+                        <span class="checkbox"></span>
+                        <span class="option-text">Numere (123)</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" id="symbols">
+                        <span class="checkbox"></span>
+                        <span class="option-text">Simboluri (#$%)</span>
+                    </label>
+                </div>
+
+                <div class="password-length">
+                    <div class="length-header">
+                        <span>Lungimea Parolei: <span id="length-value" class="length-value">12</span></span>
+                    </div>
+                    <div class="password-length__wrapper">
+                        <button type="button" id="decrease-btn" class="password-length__btn password-length__btn--minus">-</button>
+                        <input type="range" id="length-slider" min="4" max="32" value="12">
+                        <button type="button" id="increase-btn" class="password-length__btn password-length__btn--plus">+</button>
+                    </div>  
+                </div>
+
+                <button type="button" class="generate-btn" id="generate-btn">
+                    <i class="fa-solid fa-bolt"></i> Generează Parolă
+                </button>
+            </div>
+
+            <div class="strength-meter">
+                <div class="strength-title">Puterea parolei</div>
+                <div class="strength-bars">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="strength-text">Medie</div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
